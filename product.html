@@ -40,7 +40,7 @@
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal gap-5 px-1 ">
               <li><a class="menu-link text-lg bg-white" href="./index.html">Home</a></li>
-              <li><a  class="menu-link  text-lg bg-white active" href="./product.html">Products</a></li>
+              <li><a  class="menu-link  text-lg bg-white menu-active" href="./product.html">Products</a></li>
               <li><a class="menu-link text-lg bg-white" href="#">About</a></li>
               <li><a class="menu-link text-lg bg-white" href="#">Contact</a></li>
             </ul>
@@ -70,7 +70,7 @@
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./product.html">Products</a></li>
+                <li><a class="menu-active" href="./product.html">Products</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
@@ -92,7 +92,20 @@
     <div id="all-product" class="grid gap-20 py-10  space-y-4 sm:grid-cols-1  md:grid-cols-3">
 
     </div>
+    <!-- Open the modal using ID.showModal() method -->
+
+
   </div>
+
+  <dialog id="my_modal_2" class="modal">
+  <div class="modal-box" id="modal-content">
+    
+  </div>
+
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
 
 </section>
 

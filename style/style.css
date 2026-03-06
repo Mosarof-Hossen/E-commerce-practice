@@ -1,3 +1,10 @@
 .active{
+    background-color: blue;
+    color: white;
+}
+
+.menu-active{
     color: blue;
+    
+    
 }

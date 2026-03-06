@@ -20,7 +20,7 @@ const displayLesson = (lesson) => {
                     <h1 class="text-2xl pt-2">${element.title.slice(0, 30) + "..."}</h1>
                     <h1 class="text-2xl font-bold py-3">$${element.price}</h1>
                     <div class="flex justify-between">
-                        <button class="btn bg-white border-[#e5e5e5]"><i class="fa-regular fa-eye"></i> Details</button>
+                        <button onclick="productDetails(${element.id})" class="btn bg-white border-[#e5e5e5]"><i class="fa-regular fa-eye"></i> Details</button>
                         <button class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i> Add</button>
                     </div>
                     
@@ -40,9 +40,46 @@ const currentPage = window.location.pathname.split("/").pop();
 links.forEach((get) => {
   const anyPage = get.getAttribute("href").replace("./", "");
   if (anyPage === currentPage) {
-    get.classList.add("active");
+    get.classList.add("menu-active");
   }
 });
+
+// product showDetails function
+
+
+const productDetails = async (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  showDetails(data);
+};
+
+
+const showDetails = (details) => {
+  const modalContent = document.getElementById("modal-content");
+
+  modalContent.innerHTML = `
+    
+
+    <h2 class="text-2xl font-bold mt-4">${details.title}</h2>
+
+    <p class="py-3 text-gray-600">${details.description}</p>
+
+    <h3 class="text-xl font-bold">$${details.price}</h3>
+
+    <p class="mt-4 flex justify-between">
+    <span><i class="fa-solid fa-star text-yellow-400"></i> ${details.rating.rate}</span> <span>(${details.rating.count}) </span>
+    </p>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  `;
+
+  document.getElementById("my_modal_2").showModal();
+};
 
 
 
