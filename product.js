@@ -36,7 +36,7 @@ const categoriesContainer = (cat) => {
   // 🔹 All button
   const allBtn = document.createElement("button");
   allBtn.id = "all-categories-button";
-  allBtn.className = "btn btn-outline px-6 text-lg rounded-full text-gray-700";
+  allBtn.className = "btn btn-outline px-6 md:text-lg rounded-full text-gray-700";
   allBtn.innerText = "All";
 
   allBtn.addEventListener("click", () => {
@@ -49,7 +49,7 @@ const categoriesContainer = (cat) => {
   // 🔹 Category buttons
   cat.forEach((item, index) => {
     const btn = document.createElement("button");
-    btn.className = "btn btn-outline px-6 text-lg rounded-full text-gray-700";
+    btn.className = "btn btn-outline px-6 md:text-lg rounded-full text-gray-700";
     btn.innerText = item;
 
     btn.addEventListener("click", () => {
