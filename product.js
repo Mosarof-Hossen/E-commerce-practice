@@ -96,7 +96,7 @@ const displayProduct = (products) => {
         <h1 class="text-2xl font-bold py-3">$${element.price}</h1>
         <div class="flex justify-between">
           <button onclick="productDetails(${element.id})" class="btn bg-white border-[#e5e5e5]"><i class="fa-regular fa-eye"></i> Details</button>
-          <button class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i> Add</button>
+          <button onclick="cartCount()" class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i> Add</button>
         </div>
       </div>
     `;
@@ -150,3 +150,15 @@ const categoriesLesson = async (name) => {
   const data = await res.json();
   displayProduct(data);
 };
+
+// cart count function
+let count=0;
+
+const cartCount=()=>{
+  count++;
+  const addCart=document.getElementById("cart-count")
+  addCart.innerText=count;
+}
+
+
+
